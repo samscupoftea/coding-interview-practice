@@ -8,7 +8,16 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) { }
+function anagrams(stringA, stringB) {
+
+    const charMapA = {}
+    string = stringA.toLowerCase().replace(/[\W]/g, '')
+
+    for (let char of stringA) {
+        charMapA[char] = ++charMapA[char] || 1;
+    }
+    return charMapA;
+}
 
 
 console.log(anagrams('RAIL! SAFETY!', 'fairy tales'));
