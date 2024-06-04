@@ -44,3 +44,22 @@ console.log(isPalindrome(str));
 
 // let str = "101";
 // console.log(palindrome(str));
+
+
+// Palindrome using two pointers technique:
+
+function isPalindrome(str) {
+    let min = 0
+    let max = str.length - 1
+
+    do {
+        if (str[min] == str[max]) {
+            min++
+            max--
+        } else {
+            return false
+        }
+    } while (min < max)
+
+    return true
+}

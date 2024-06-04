@@ -13,25 +13,25 @@
 
 
 
-
-
-
-
 function maxChar(str) {
     let charCount = {};
-    for (let char in str) {
+    for (let char of str) {
+        if (charCount[char]) {
+            charCount[char] = charCount[char] + 1
+        } else {
+            charCount[char] = 1
+        }
 
     }
 
-
+    return charCount
 }
-
 let str = "aabbbbbbbbbbc";
-
+console.log(maxChar(str));
 //HASHMAP
 
-let strCharCount = {
-    a: 2,
-    b: 10,
-    c: 1,
-}
+// let strCharCount = {
+//     a: 2,
+//     b: 10,
+//     c: 1,
+// }
